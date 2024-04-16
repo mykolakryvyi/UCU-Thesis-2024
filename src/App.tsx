@@ -13,8 +13,17 @@ const theme = createTheme({
     typography: {
         button: {
             textTransform: 'none',
+        },
+    },
+    components: {
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    borderRight: '1px solid rgba(224, 224, 224, 1)',
+                }
+            },
         }
-    }
+    },
 });
 
 const App = ({ children }: { children: ReactNode }) => {

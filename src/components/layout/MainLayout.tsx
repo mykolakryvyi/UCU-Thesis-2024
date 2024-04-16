@@ -11,6 +11,7 @@ const Container = style.main`
     flex-direction: row;
     gap: 10px;
     padding: 10px;
+    overflow: auto;
 `
 
 const Drawer = styled(Box)`
