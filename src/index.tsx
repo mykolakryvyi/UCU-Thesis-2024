@@ -9,7 +9,7 @@ import App from './App';
 import MainLayout from './components/layout/MainLayout';
 import FunnelLayout from './components/layout/FunnelLayout';
 import HomePage from './pages/HomePage';
-import FunnelHomePage from './pages/HomePage';
+import FunnelHomePage from './pages/funnel/HomePage';
 import ThemePage from './pages/funnel/ThemePage';
 import GeneralPage from './pages/funnel/GeneralPage';
 import EmailPage from './pages/funnel/EmailPage';
