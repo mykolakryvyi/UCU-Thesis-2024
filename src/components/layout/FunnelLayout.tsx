@@ -1,15 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Button, Stack, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import MainContainer from '../../ui/MainContainer';
 import { E_ROUTE } from '../../constants/constants';
-
-const NavContainer = styled(Stack)`
-    width: 100%;
-    gap: 8px;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: ${({theme}) => theme.palette.background.default};
-`
 
 const FunnelLayout = () => {
     const location = useLocation();
@@ -17,7 +9,7 @@ const FunnelLayout = () => {
 
     return (
         <Stack width='100%' gap='10px'>
-            <NavContainer>
+            <MainContainer width='100%' gap='8px'>
                 <Typography variant='body1'>Website name</Typography>
                 <Stack direction='row-reverse' justifyContent='space-between' alignItems='center'>
                     <Button variant='contained' sx={{ color: 'white' }}>
@@ -67,13 +59,6 @@ const FunnelLayout = () => {
                                 Payment Page
                             </Button>
                         </Link>
-                        <Link to={E_ROUTE.PAYMENTS}>
-                            <Button
-                                variant={pathname === E_ROUTE.PAYMENTS ? 'outlined' : 'text'}
-                            >
-                                Payments
-                            </Button>
-                        </Link>
                         <Link to={E_ROUTE.ANALYTICS}>
                             <Button
                                 variant={pathname === E_ROUTE.ANALYTICS ? 'outlined' : 'text'}
@@ -81,9 +66,16 @@ const FunnelLayout = () => {
                                 Analytics
                             </Button>
                         </Link>
+                        <Link to={E_ROUTE.UPSALE}>
+                            <Button
+                                variant={pathname === E_ROUTE.UPSALE ? 'outlined' : 'text'}
+                            >
+                                Upsale
+                            </Button>
+                        </Link>
                     </Stack>
                 </Stack>
-            </NavContainer>
+            </MainContainer>
             <Stack>
                 <Outlet />
             </Stack>

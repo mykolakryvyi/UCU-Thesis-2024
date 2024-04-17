@@ -19,13 +19,13 @@ const Container = styled(Stack)`
 `;
 
 interface ITableFilterProps {
-    status?: E_FUNNEL_STATUS;
-    setStatus: (status: E_FUNNEL_STATUS) => void;
+    status?: E_FUNNEL_STATUS | 'Both';
+    setStatus: (status: E_FUNNEL_STATUS | 'Both') => void;
 }
 
 const TableFilter: FC<ITableFilterProps> = ({ status, setStatus }) => {
     const handleStatusChange = (event: SelectChangeEvent) => {
-        setStatus(event.target.value as E_FUNNEL_STATUS);
+        setStatus(event.target.value as E_FUNNEL_STATUS | 'Both');
     };
 
     return (
@@ -58,6 +58,7 @@ const TableFilter: FC<ITableFilterProps> = ({ status, setStatus }) => {
                 >
                     <MenuItem value={E_FUNNEL_STATUS.ACTIVE}>Active</MenuItem>
                     <MenuItem value={E_FUNNEL_STATUS.INACTIVE}>Inactive</MenuItem>
+                    <MenuItem value='Both'>Both</MenuItem>
                 </Select>
             </FormControl>
         </Container>

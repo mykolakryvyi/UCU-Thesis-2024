@@ -20,9 +20,30 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     borderRight: '1px solid rgba(224, 224, 224, 1)',
-                }
+                },
             },
-        }
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    '&:disabled': {
+                        cursor: 'not-allowed',
+                        pointerEvents: 'all',
+                        backgroundColor: 'white',
+                    },
+                },
+                contained: {
+                    color: 'white',
+                },
+            },
+        },
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'white',
+                },
+            },
+        },
     },
 });
 

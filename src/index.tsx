@@ -15,7 +15,7 @@ import GeneralPage from './pages/funnel/GeneralPage';
 import EmailPage from './pages/funnel/EmailPage';
 import QuizPage from './pages/funnel/QuizPage';
 import PaymentPage from './pages/funnel/PaymentPage';
-import PaymentsPage from './pages/funnel/PaymentsPage';
+import UpsalePage from './pages/funnel/UpsalePage';
 import AnalyticsPage from './pages/funnel/AnalyticsPage';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -59,12 +59,12 @@ const router = createBrowserRouter([
                         element: <PaymentPage/>
                     },
                     {
-                        path: E_ROUTE.PAYMENTS,
-                        element: <PaymentsPage/>
-                    },
-                    {
                         path: E_ROUTE.ANALYTICS,
                         element: <AnalyticsPage/>
+                    },
+                    {
+                        path: E_ROUTE.UPSALE,
+                        element: <UpsalePage/>
                     },
                 ],
             },

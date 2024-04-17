@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
-import { Button, Box, Stack } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Button, Stack } from '@mui/material';
+import MainContainer from '../../ui/MainContainer';
 import style from '@emotion/styled'
 import { E_ROUTE } from '../../constants/constants';
 
@@ -14,23 +14,14 @@ const Container = style.main`
     overflow: auto;
 `
 
-const Drawer = styled(Box)`
-    width: 16%;
-    min-width: 288px;
-    height: 100%;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: ${({theme}) => theme.palette.background.default};
-`;
-
 const MainLayout = () => {
     return (
         <Container>
-            <Drawer>
+            <MainContainer width='16%' minWidth='288px' height='100%'>
                 <Link to={E_ROUTE.MAIN}>
                     <Button variant='outlined' fullWidth>Funnels</Button>
                 </Link>
-            </Drawer>
+            </MainContainer>
             <Stack width='100%'>
                 <Outlet />
             </Stack>

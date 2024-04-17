@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Stack } from '@mui/material';
+import MainContainer from "../ui/MainContainer";
 import TableFilter from '../components/filter/TableFilter';
 import FunnelTable from '../components/table/FunnelTable';
 import { Funnels as funnelData } from '../constants/constants';
@@ -12,25 +13,18 @@ const Container = styled(Stack)`
     gap: 10px
 `
 
-const Wrapper = styled(Stack)`
-    width: 100%;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: ${({theme}) => theme.palette.background.default};
-`;
-
 const HomePage = () => {
-    const [status, setStatus] = useState<E_FUNNEL_STATUS | undefined>();
-    const filteredFunnels = funnelData.filter(funnel => status ? funnel.status === status : true);
+    const [status, setStatus] = useState<E_FUNNEL_STATUS | 'Both' | undefined>();
+    const filteredFunnels = funnelData.filter(funnel => status && status !== 'Both' ? funnel.status === status : true);
 
     return (
         <Container>
-            <Wrapper>
+            <MainContainer width='100%'>
                 <TableFilter status={status} setStatus={setStatus} />
-            </Wrapper>
-            <Wrapper maxHeight='100%' overflow='auto'>
+            </MainContainer>
+            <MainContainer width='100%' maxHeight='100%' overflow='auto'>
                 <FunnelTable funnels={filteredFunnels} />
-            </Wrapper>
+            </MainContainer>
         </Container>
     );
 };

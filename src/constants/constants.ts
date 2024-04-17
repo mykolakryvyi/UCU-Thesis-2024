@@ -9,8 +9,8 @@ export enum E_ROUTE {
     QUIZ = 'quiz',
     EMAIL = 'email',
     PAYMENT = 'payment',
-    PAYMENTS = 'payments',
     ANALYTICS = 'analytics',
+    UPSALE = 'upsale',
 }
 
 export const Funnels: IFunnel[] = [
