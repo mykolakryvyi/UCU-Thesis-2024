@@ -29,11 +29,13 @@ const theme = createTheme({
                     '&:disabled': {
                         cursor: 'not-allowed',
                         pointerEvents: 'all',
-                        backgroundColor: 'white',
                     },
                 },
                 contained: {
                     color: 'white',
+                    '&:disabled': {
+                        backgroundColor: 'white',
+                    },
                 },
             },
         },
