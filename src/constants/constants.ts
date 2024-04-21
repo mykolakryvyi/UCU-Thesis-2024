@@ -1,6 +1,12 @@
 import { E_FUNNEL_STATUS } from '../interfaces/funnel';
 import type { IFunnel } from '../interfaces/funnel';
 
+export enum E_SUBSCRIPTION {
+    WEEKLY = 'weekly',
+    MONTHLY = 'monthly',
+    QUARTERLY = 'quarterly',
+}
+
 export enum E_ROUTE {
     MAIN = '/',
     GENERAL = 'general',

@@ -22,7 +22,7 @@ const AnalyticsPage = () => {
     return (
         <Stack gap='10px'>
             <MainContainer width='592px' maxWidth='100%' gap='10px'>
-                <Typography variant='body2'>Add payment methods</Typography>
+                <Typography variant='body2'><strong>Add payment methods</strong></Typography>
                 <Grid container gap='10px' wrap='nowrap'>
                     <Grid item xs={6}>
                         <Link to='https://stripe.com/' target='_blank'>
@@ -65,7 +65,7 @@ const AnalyticsPage = () => {
                 </Grid>
             </MainContainer>
             <MainContainer width='592px' maxWidth='100%' gap='10px' component='form'>
-                <Typography variant='body2'>Add analytics tools</Typography>
+                <Typography variant='body2'><strong>Add analytics tools</strong></Typography>
                 <Stack direction='row' alignItems='center' gap='10px'>
                     <TextField
                         fullWidth

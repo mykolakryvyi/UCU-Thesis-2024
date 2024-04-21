@@ -16,7 +16,7 @@ const EmailPage = () => {
 
     return (
         <MainContainer width='592px' maxWidth='100%' gap='10px' component='form'>
-            <Typography variant='body2'>Page content</Typography>
+            <Typography variant='body2'><strong>Page content</strong></Typography>
             <TextField
                 fullWidth
                 size='small'

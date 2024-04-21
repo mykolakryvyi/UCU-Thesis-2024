@@ -14,7 +14,7 @@ const FunnelLayout = () => {
         <>
             <Stack width='100%' height='100%' gap='10px'>
                 <MainContainer width='100%' gap='8px'>
-                    <Typography variant='body1'>Website name</Typography>
+                    <Typography variant='body1'><strong>Website name</strong></Typography>
                     <Stack direction='row-reverse' justifyContent='space-between' alignItems='center'>
                         <Button
                             variant='contained'

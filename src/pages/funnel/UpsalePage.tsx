@@ -14,9 +14,9 @@ const UpsalePage = () => {
     return (
         <MainContainer width='440px' maxWidth='100%'>
             <Stack gap='16px'>
-                <Typography variant='body2'>Upsale</Typography>
+                <Typography variant='body2'><strong>Upsale</strong></Typography>
                 <ImageUploader
-                    id='8'
+                    id='7'
                     file={photo}
                     title='Drop photo here'
                     height='408px'

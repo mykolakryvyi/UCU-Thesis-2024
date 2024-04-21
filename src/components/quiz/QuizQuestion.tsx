@@ -48,7 +48,7 @@ const QuizQuestion: FC<IQuizQuestionProps> = ({number, canRemove, addQuestion, r
     return (
         <>
             <Stack direction='row' justifyContent='space-between'>
-                <Typography variant='body2'>Question {number}</Typography>
+                <Typography variant='body2'><strong>Question {number}</strong></Typography>
                 <Button
                     size='small'
                     variant='text'

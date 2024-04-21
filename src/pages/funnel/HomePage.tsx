@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, IconButton, Stack, TextField } from '@mui/material';
+import { Button, IconButton, Stack, TextField, Typography } from '@mui/material';
 import { Trash } from 'react-feather';
 import MainContainer from '../../ui/MainContainer';
 import ImageUploader from '../../components/uploader/ImageUploader';
@@ -27,6 +27,7 @@ const HomePage = () => {
     return (
         <MainContainer width='440px' maxWidth='100%'>
             <Stack gap='16px'>
+                <Typography variant='body2'><strong>Question</strong></Typography>
                 <ImageUploader
                     id='3'
                     file={file}

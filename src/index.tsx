@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
     createBrowserRouter,
+    RouterProvider,
     Navigate,
-    RouterProvider
 } from 'react-router-dom';
 import App from './App';
 import MainLayout from './components/layout/MainLayout';
@@ -18,8 +18,8 @@ import PaymentPage from './pages/funnel/PaymentPage';
 import UpsalePage from './pages/funnel/UpsalePage';
 import AnalyticsPage from './pages/funnel/AnalyticsPage';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
 import { E_ROUTE } from './constants/constants';
+import './index.css';
 
 const router = createBrowserRouter([
     {
@@ -82,9 +82,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-      <App>
-          <RouterProvider router={router} />
-      </App>
+        <App>
+            <RouterProvider router={router} />
+        </App>
     </React.StrictMode>
 );
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Stack } from '@mui/material';
-import MainContainer from "../ui/MainContainer";
+import MainContainer from '../ui/MainContainer';
 import TableFilter from '../components/filter/TableFilter';
 import FunnelTable from '../components/table/FunnelTable';
 import { Funnels as funnelData } from '../constants/constants';
