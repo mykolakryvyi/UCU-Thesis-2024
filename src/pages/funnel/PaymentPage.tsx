@@ -12,6 +12,7 @@ import { Trash } from 'react-feather';
 import MainContainer from '../../ui/MainContainer';
 import ImageUploader from '../../components/uploader/ImageUploader';
 import Review from '../../components/review/Review';
+import SavedAlert from '../../alerts/SavedAlert';
 import { E_SUBSCRIPTION } from '../../constants/constants';
 
 const PaymentPage = () => {
@@ -30,6 +31,7 @@ const PaymentPage = () => {
     const [marketingPhoto, setMarketingPhoto] = useState<File | null>(null);
     const [beforeImage, setBeforeImage] = useState<File | null>(null);
     const [afterImage, setAfterImage] = useState<File | null>(null);
+    const [alert, setAlert] = useState(false);
 
     const addReview = () => {
         setReviews((prevState) => [ ...prevState, { id: prevState[prevState.length - 1].id + 1 } ]);
@@ -55,6 +57,7 @@ const PaymentPage = () => {
 
     return (
         <Stack gap='10px'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <MainContainer width='440px' maxWidth='100%'>
                 <Stack gap='16px'>
                     <Typography variant='body2'><strong>Marketing promo</strong></Typography>
@@ -295,7 +298,10 @@ const PaymentPage = () => {
                         !subscription ||
                         features.some((el) => !el)
                     }
-                >Save</Button>
+                    onClick={() => setAlert(true)}
+                >
+                    Save
+                </Button>
             </MainContainer>
         </Stack>
     );

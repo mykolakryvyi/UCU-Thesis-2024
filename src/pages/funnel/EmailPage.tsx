@@ -8,14 +8,17 @@ import {
     Typography,
 } from '@mui/material';
 import MainContainer from '../../ui/MainContainer';
+import SavedAlert from '../../alerts/SavedAlert';
 
 const EmailPage = () => {
     const [heading, setHeading] = useState('');
     const [subheading, setSubheading] = useState('');
     const [buttonText, setButtonText] = useState('');
+    const [alert, setAlert] = useState(false);
 
     return (
         <MainContainer width='592px' maxWidth='100%' gap='10px' component='form'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <Typography variant='body2'><strong>Page content</strong></Typography>
             <TextField
                 fullWidth
@@ -56,10 +59,9 @@ const EmailPage = () => {
             </FormGroup>
             <Button
                 fullWidth
-                type='submit'
                 variant='contained'
                 disabled={!heading || !subheading || !buttonText}
-                onClick={(e) => e.preventDefault()}
+                onClick={() => setAlert(true)}
             >
                 Save
             </Button>

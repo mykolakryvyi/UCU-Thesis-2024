@@ -8,9 +8,16 @@ interface IQuizQuestionProps {
     canRemove: boolean;
     addQuestion: () => void;
     removeQuestion: () => void;
+    onSave: () => void;
 }
 
-const QuizQuestion: FC<IQuizQuestionProps> = ({number, canRemove, addQuestion, removeQuestion }) => {
+const QuizQuestion: FC<IQuizQuestionProps> = ({
+    number,
+    canRemove,
+    addQuestion,
+    removeQuestion,
+    onSave,
+}) => {
     const [heading, setHeading] = useState('');
     const [answers, setAnswers] = useState(['', '']);
 
@@ -101,8 +108,10 @@ const QuizQuestion: FC<IQuizQuestionProps> = ({number, canRemove, addQuestion, r
                     fullWidth
                     variant='contained'
                     disabled={!heading || checkSomeAnswersEmpty()}
+                    onClick={onSave}
+
                 >
-                    Save
+                    Save quiz
                 </Button>
             </Stack>
         </>

@@ -3,6 +3,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import MainContainer from '../../ui/MainContainer';
 import ImageUploader from '../../components/uploader/ImageUploader';
 import ColorPicker from '../../components/colorPicker/ColorPicker';
+import SavedAlert from '../../alerts/SavedAlert';
 import { HEX_COLOR_REGEX } from '../../constants/regex';
 
 const ThemePage = () => {
@@ -12,9 +13,11 @@ const ThemePage = () => {
     const [cardColor, setCardColor] = useState<string>('#');
     const [mainTextColor, setMainTextColor] = useState<string>('#');
     const [mainButtonColor, setMainButtonColor] = useState<string>('#');
+    const [alert, setAlert] = useState(false);
 
     return (
         <Stack gap='10px'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <MainContainer width='592px' maxWidth='100%' gap='10px'>
                 <Typography variant='body2'><strong>Images</strong></Typography>
                 <Stack direction='row' gap='16px'>
@@ -71,6 +74,7 @@ const ThemePage = () => {
                         !HEX_COLOR_REGEX.test(mainButtonColor) ||
                         !HEX_COLOR_REGEX.test(mainTextColor)
                     }
+                    onClick={() => setAlert(true)}
                 >
                     Save
                 </Button>

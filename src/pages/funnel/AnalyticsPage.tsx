@@ -8,6 +8,7 @@ import {
     Typography,
 } from '@mui/material';
 import MainContainer from '../../ui/MainContainer';
+import SavedAlert from '../../alerts/SavedAlert';
 import StripeIcon from '../../ui/icons/stripe-icon.svg';
 import PaypalIcon from '../../ui/icons/paypal-icon.svg';
 import AmplitudeIcon from '../../ui/icons/amplitude-icon.svg';
@@ -18,9 +19,11 @@ const AnalyticsPage = () => {
     const [amplitudeId, setAmplitude] = useState('');
     const [facebookId, setFacebookId] = useState('');
     const [googleId, setGoogleId] = useState('');
+    const [alert, setAlert] = useState(false);
 
     return (
         <Stack gap='10px'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <MainContainer width='592px' maxWidth='100%' gap='10px'>
                 <Typography variant='body2'><strong>Add payment methods</strong></Typography>
                 <Grid container gap='10px' wrap='nowrap'>
@@ -104,10 +107,9 @@ const AnalyticsPage = () => {
                 </Stack>
                 <Button
                     fullWidth
-                    type='submit'
                     variant='contained'
                     disabled={!amplitudeId && !facebookId && !googleId}
-                    onClick={(e) => e.preventDefault()}
+                    onClick={() => setAlert(true)}
                 >
                     Save
                 </Button>

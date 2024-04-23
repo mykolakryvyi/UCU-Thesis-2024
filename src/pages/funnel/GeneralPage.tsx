@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { Button, Stack, TextField } from '@mui/material';
 import MainContainer from '../../ui/MainContainer';
+import SavedAlert from '../../alerts/SavedAlert';
 
 const GeneralPage = () => {
     const [dns, setDns] = useState('');
     const [status, setStatus] = useState('');
     const [description, setDescription] = useState('');
+    const [alert, setAlert] = useState(false);
 
     return (
         <MainContainer width='592px' maxWidth='100%' gap='10px' component='form'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <Stack direction='row' gap='10px'>
                 <TextField
                     fullWidth
@@ -47,10 +50,9 @@ const GeneralPage = () => {
             />
             <Button
                 fullWidth
-                type='submit'
                 variant='contained'
                 disabled={!dns || !status || !description}
-                onClick={(e) => e.preventDefault()}
+                onClick={() => setAlert(true)}
             >
                 Save
             </Button>

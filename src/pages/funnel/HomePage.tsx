@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, IconButton, Stack, TextField, Typography } from '@mui/material';
 import { Trash } from 'react-feather';
 import MainContainer from '../../ui/MainContainer';
+import SavedAlert from '../../alerts/SavedAlert';
 import ImageUploader from '../../components/uploader/ImageUploader';
 
 const HomePage = () => {
@@ -9,6 +10,7 @@ const HomePage = () => {
     const [heading, setHeading] = useState('');
     const [subheading, setSubheading] = useState('');
     const [answers, setAnswers] = useState(['', '', '', '']);
+    const [alert, setAlert] = useState(false);
 
     const addAnswer = () => {
         setAnswers((prevState) => [...prevState, '']);
@@ -26,6 +28,7 @@ const HomePage = () => {
 
     return (
         <MainContainer width='440px' maxWidth='100%'>
+            <SavedAlert open={alert} onClose={() => setAlert(false)} />
             <Stack gap='16px'>
                 <Typography variant='body2'><strong>Question</strong></Typography>
                 <ImageUploader
@@ -82,6 +85,7 @@ const HomePage = () => {
                     fullWidth
                     variant='contained'
                     disabled={!heading || checkSomeAnswersEmpty() || !file}
+                    onClick={() => setAlert(true)}
                 >
                     Save
                 </Button>
